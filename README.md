@@ -1,16 +1,34 @@
-# geren_task_n1
+# Aplicativo de Gerenciamento de Tarefas
 
-A new Flutter project.
+O UpTodo é um aplicativo mobile de organização pessoal. Ele permite que os usuários gerencie suas tarefas, criem rotinas e
+organizem atividades por categorias.
+- Objetivo: aumentar a produtividade e facilitar o controle do dia a dia.
 
-## Getting Started
+# ⚙️Funcionalidades Principais
 
-This project is a starting point for a Flutter application.
+## Autenticação
+- Cadastro
+- Login de usuários (email e Senha)
+- Recuperação de acesso com senha
 
-A few resources to get you started if this is your first Flutter project:
+## Gerenciamento de tarefas
+- Adicionar, editar, excluir e concluir tarefas
+- Definir data, hora, prioridade e subtarefas
+- Criar e editar categorias (nome, cor, ícone)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Outros
+- Segurança no armazenamento e
+autenticação
+- Persistência local
+- Login biométrico (impressão
+digital)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Trabalho Construção de Software II - N1
+Esse repositório foi criado para fazer a entrega do trabalho que compõe a nota da N1 da matéria Design de Software.
+
+# Aluno
+José Mauro
+
+# Instituição de ensino
+Senai Fatesg
