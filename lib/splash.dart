@@ -38,13 +38,13 @@ class _SplashPageState extends State<SplashPage> {
       home: Scaffold(
         backgroundColor: Colors.lightBlueAccent,
         body: Container(
-          color: Colors.lightBlueAccent,
+          color: Colors.black,
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/001.png", width: 150, height: 150),
+              Image.asset("assets/images/logo.png", width: 150, height: 150),
               Container(height: 20),
               CircularProgressIndicator(color: Colors.white),
             ],
