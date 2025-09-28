@@ -42,7 +42,7 @@ class Register extends StatelessWidget {
             ),
             const SizedBox(height: 32),
 
-            // Campo Nome de Usuário
+            
             TextFormField(
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -57,7 +57,7 @@ class Register extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Campo Senha
+            
             TextFormField(
               obscureText: true,
               style: const TextStyle(color: Colors.white),
@@ -73,7 +73,6 @@ class Register extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Campo Confirmar Senha
             TextFormField(
               obscureText: true,
               style: const TextStyle(color: Colors.white),
@@ -89,12 +88,12 @@ class Register extends StatelessWidget {
             ),
             const SizedBox(height: 32),
 
-            // Botão CRIAR CONTA
+            
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-                  // TODO: lógica de cadastro
+                 
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: purple,
@@ -113,7 +112,7 @@ class Register extends StatelessWidget {
             ),
             const Spacer(),
 
-            // Link para Login
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

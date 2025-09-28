@@ -25,7 +25,7 @@ digital)
 
 
 ## Trabalho Construção de Software II - N1
-Esse repositório foi criado para fazer a entrega do trabalho que compõe a nota da N1 da matéria Design de Software.
+Esse repositório foi criado para fazer a entrega do trabalho que compõe a nota da N1 da matéria Construção de Software II.
 
 # Aluno
 José Mauro

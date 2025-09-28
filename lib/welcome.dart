@@ -39,7 +39,7 @@ class Welcome extends StatelessWidget {
           children: [
             const SizedBox(height: 32),
             const Text(
-              'Welcome to UpTodo!',
+              'Bem vindo ao UpTodo!',
               style: TextStyle(
                 fontSize: 26,
                 fontWeight: FontWeight.bold,
@@ -49,18 +49,18 @@ class Welcome extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             const Text(
-              'Manage your tasks',
+              'Gerencie suas tarefas',
               style: TextStyle(fontSize: 16, color: Colors.white70),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 48),
 
-            // Botão LOGIN (roxo)
+            
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: ()  => _goToLogin(context),
-                child: const Text('LOGIN'),
+                child: const Text('ENTRAR'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: purple,
                   foregroundColor: Colors.white,
@@ -78,12 +78,12 @@ class Welcome extends StatelessWidget {
             ),
             const SizedBox(height: 16),
 
-            // Botão CREATE ACCOUNT (borda roxa)
+            
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 onPressed: () => _goToRegister(context),
-                child: const Text('CREATE ACCOUNT'),
+                child: const Text('CRIAR CONTA'),
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: purple, width: 2),
                   foregroundColor: Colors.white,

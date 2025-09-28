@@ -2,12 +2,22 @@ import 'package:flutter/material.dart';
 
 import 'register.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
+
+  
 
   static const Color background = Colors.black;
   static const Color purple = Color(0xFF7B61FF);
 
+  static const String fixedUsername = "admin";
+  static const String fixedPassword = "123456";
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   void _goToRegister(BuildContext context) {
     Navigator.push(
       context,
@@ -18,9 +28,9 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: background,
+      backgroundColor: Login.background,
       appBar: AppBar(
-        backgroundColor: background,
+        backgroundColor: Login.background,
         elevation: 0,
         centerTitle: true,
         title: const Text('Login', style: TextStyle(color: Colors.white)),
@@ -45,7 +55,7 @@ class Login extends StatelessWidget {
             ),
             const SizedBox(height: 32),
 
-            // Campo Usuário
+            
             TextFormField(
               style: const TextStyle(color: Colors.white),
               decoration: InputDecoration(
@@ -60,7 +70,7 @@ class Login extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            // Campo Senha
+            
             TextFormField(
               obscureText: true,
               style: const TextStyle(color: Colors.white),
@@ -76,7 +86,7 @@ class Login extends StatelessWidget {
             ),
             const SizedBox(height: 25),
 
-            // Botão ENTRAR
+            
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -84,7 +94,7 @@ class Login extends StatelessWidget {
                   // TODO: lógica de login
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: purple,
+                  backgroundColor: Login.purple,
                   foregroundColor: Colors.white,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   textStyle: const TextStyle(
@@ -100,7 +110,7 @@ class Login extends StatelessWidget {
             ),
             const Spacer(),
 
-            // Link para criar conta
+            
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -116,7 +126,7 @@ class Login extends StatelessWidget {
                   child: const Text(
                     'CRIAR CONTA',
                     style: TextStyle(
-                      color: purple,
+                      color: Login.purple,
                       fontSize: 15,
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline,
