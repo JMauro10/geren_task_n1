@@ -6,7 +6,7 @@ import 'task.dart';
 
 
 
-// --- Lista de Ícones e Cores Pré-definidos ---
+// A lista de icones
 final List<IconData> _availableIcons = [
   Icons.work, Icons.person, Icons.school, Icons.category,
   Icons.home, Icons.shopping_cart, Icons.fitness_center, Icons.travel_explore,
@@ -22,7 +22,7 @@ final List<Color> _availableColors = [
   Colors.lightGreen, Colors.deepPurple,
 ];
 
-// --- Widget Principal ---
+
 class Tasks extends StatefulWidget {
   const Tasks({Key? key}) : super(key: key);
 
@@ -38,13 +38,13 @@ class _TasksState extends State<Tasks> {
   @override
   void initState() {
     super.initState();
-    // Inicializa com algumas categorias padrão
+    // Inicializei algumas categorias pra ficar por default
     _categories.add(Category(name: 'Trabalho', icon: Icons.work, color: Colors.blue));
     _categories.add(Category(name: 'Pessoal', icon: Icons.person, color: Colors.green));
     _categories.add(Category(name: 'Estudos', icon: Icons.school, color: Colors.orange));
     _categories.add(Category(name: 'Outros', icon: Icons.category, color: Colors.grey));
     
-    // Adiciona uma tarefa de exemplo para que a lista não comece vazia
+    // Adicionei duas tarefas de exemplo
     tasks.add(Task(
       title: 'Configurar sua tarefa teste',
       description: 'Edite essa tarefa para ser sua primeira',
@@ -62,7 +62,7 @@ class _TasksState extends State<Tasks> {
     ));
   }
 
-  // --- Funções para Gerenciar Tarefas ---
+  // Funções para gerenciar as tarefas
   void _addTask(Task task) {
     setState(() => tasks.add(task));
   }
@@ -75,7 +75,7 @@ class _TasksState extends State<Tasks> {
     setState(() => tasks.removeAt(index));
   }
 
-  // --- Funções para Gerenciar Categorias ---
+  // Funções para gerenciar as categorias
   void _addCategory(Category category) {
     setState(() => _categories.add(category));
   }
@@ -99,16 +99,12 @@ class _TasksState extends State<Tasks> {
       _categories.removeWhere((c) => c == categoryToRemove);
       // Remove tarefas associadas ou as move para uma categoria padrão
       tasks.removeWhere((t) => t.category == categoryToRemove);
-      // Opcional: atribuir a uma categoria padrão se a tarefa não for removida
-      // if (_categories.isNotEmpty) {
-      //   tasks.where((t) => t.category == categoryToRemove).forEach((t) => t.category = _categories.first);
-      // }
     });
   }
 
-  // --- Modais ---
+  // Pop Ups / Modals
 
-  // Modal para Adicionar/Editar Categoria
+  //  Modal para Adicionar/Editar categoria
   void _showAddEditCategoryModal({Category? category, int? index}) {
     final nameController = TextEditingController(text: category?.name ?? '');
     IconData selectedIcon = category?.icon ?? _availableIcons.first;
@@ -140,13 +136,13 @@ class _TasksState extends State<Tasks> {
                 SizedBox(height: 20),
                 Text('Ícone:'),
                 SizedBox(height: 8),
-                SizedBox( // Usado para limitar a altura da grade de ícones
-                  height: 100, // Altura fixa, pode ajustar
+                SizedBox( 
+                  height: 100, 
                   child: GridView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: _availableIcons.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // 2 ícones por coluna
+                      crossAxisCount: 2, 
                       crossAxisSpacing: 8,
                       mainAxisSpacing: 8,
                       childAspectRatio: 1,
@@ -166,8 +162,8 @@ class _TasksState extends State<Tasks> {
                 SizedBox(height: 20),
                 Text('Cor:'),
                 SizedBox(height: 8),
-                SizedBox( // Usado para limitar a altura da grade de cores
-                  height: 50, // Altura fixa, pode ajustar
+                SizedBox( 
+                  height: 50, 
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: _availableColors.length,
@@ -221,12 +217,12 @@ class _TasksState extends State<Tasks> {
     final descController = TextEditingController(text: task?.description ?? '');
     DateTime selectedDateTime = task?.dateTime ?? DateTime.now();
     String selectedPriority = task?.priority ?? priorities.first;
-    Category selectedCategory = task?.category ?? _categories.first; // Usa o objeto Category
+    Category selectedCategory = task?.category ?? _categories.first; 
 
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: const Color(0xFF20202C), // Fundo escuro para o modal
+      backgroundColor: const Color(0xFF20202C), 
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(25)),
       ),
@@ -333,7 +329,7 @@ class _TasksState extends State<Tasks> {
                     Spacer(),
                     Text('Categoria:', style: TextStyle(color: Colors.white70, fontSize: 16)),
                     SizedBox(width: 10),
-                    DropdownButton<Category>( // Dropdown para Category
+                    DropdownButton<Category>( 
                       value: selectedCategory,
                       dropdownColor: Colors.grey[850],
                       style: const TextStyle(color: Colors.white),
@@ -445,7 +441,7 @@ class _TasksState extends State<Tasks> {
                               IconButton(
                                 icon: Icon(Icons.edit, color: Colors.blue),
                                 onPressed: () {
-                                  Navigator.pop(context); // Fecha o dialog de gerenciamento
+                                  Navigator.pop(context); 
                                   _showAddEditCategoryModal(category: cat, index: i);
                                 },
                               ),
@@ -521,8 +517,8 @@ class _TasksState extends State<Tasks> {
           ),
         actions: [
           IconButton(
-              icon: const Icon(Icons.folder_open_outlined, color: Colors.deepPurpleAccent), // Ícone roxo
-            onPressed: _showCategoryManagerDialog, // Botão para gerenciar categorias
+              icon: const Icon(Icons.folder_open_outlined, color: Colors.deepPurpleAccent), 
+            onPressed: _showCategoryManagerDialog, 
             tooltip: 'Gerenciar Categorias',
           ),
         ],
@@ -534,10 +530,10 @@ class _TasksState extends State<Tasks> {
               itemBuilder: (ctx, i) {
                 final t = tasks[i];
                 return Card(
-                  color: const Color(0xFF24243B), // Cor do card mais escura
+                  color: const Color(0xFF24243B), 
                   margin: EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   elevation: 5,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)), // Cantos arredondados
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18)),
                   child: Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Row(
@@ -624,15 +620,15 @@ class _TasksState extends State<Tasks> {
                                   ),
                                 ],
                               ),
-                              SizedBox(height: 4), // Espaçamento entre as linhas
-                              Row( // Nova linha para ícone e nome da categoria
+                              SizedBox(height: 4), 
+                              Row( 
                                 children: [
-                                  Icon(t.category.icon, size: 15, color: t.category.color), // Ícone da categoria
+                                  Icon(t.category.icon, size: 15, color: t.category.color), 
                                   SizedBox(width: 3),
                                   Text(
                                     t.category.name,
                                     style: TextStyle(
-                                      color: t.category.color, // Cor da categoria
+                                      color: t.category.color, 
                                       fontSize: 12,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -653,7 +649,7 @@ class _TasksState extends State<Tasks> {
         backgroundColor: Colors.deepPurpleAccent,
         foregroundColor: Colors.white,
         child: Icon(Icons.add, size: 30),
-         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), // Cantos arredondados
+         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)), 
         elevation: 6,
       ),
     );

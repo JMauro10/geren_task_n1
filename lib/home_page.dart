@@ -1,4 +1,4 @@
-// home_page.dart
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:geren_task_n1/welcome.dart'; 

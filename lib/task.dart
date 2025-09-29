@@ -4,8 +4,8 @@ class Task {
   String title;
   String description;
   DateTime dateTime;
-  String priority; // Ex: 'Alta', 'Média', 'Baixa'
-  Category category; // Agora armazena um objeto Category
+  String priority;
+  Category category; 
   bool isCompleted;
 
   Task({

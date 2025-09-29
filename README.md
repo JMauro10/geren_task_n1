@@ -7,21 +7,17 @@ organizem atividades por categorias.
 # ⚙️Funcionalidades Principais
 
 ## Autenticação
-- Cadastro
 - Login de usuários (email e Senha)
-- Recuperação de acesso com senha
 
 ## Gerenciamento de tarefas
 - Adicionar, editar, excluir e concluir tarefas
-- Definir data, hora, prioridade e subtarefas
+- Definir data, hora e prioridade
 - Criar e editar categorias (nome, cor, ícone)
 
 ## Outros
 - Segurança no armazenamento e
 autenticação
 - Persistência local
-- Login biométrico (impressão
-digital)
 
 
 ## Trabalho Construção de Software II - N1

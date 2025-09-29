@@ -15,5 +15,5 @@ class Category {
           name == other.name;
 
   @override
-  int get hashCode => name.hashCode; // Hashcode baseado no nome para comparação
+  int get hashCode => name.hashCode;
 }
